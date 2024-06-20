@@ -1,0 +1,26 @@
+// Online C compiler to run C program onlin
+#include<stdio.h>
+#include<math.h> 
+int main() 
+{
+    int base ;
+    int exp ;
+    int result;
+    printf("base  and exp  =") ;
+    scanf("%d %d",&base,&exp);
+   
+    result = pow(base, exp);
+    
+    
+    printf("the power of number %d ^ %d=%d",base,exp,result);
+    
+    
+
+    return 0;
+}
+//test
+
+
+base  and exp  =2
+2
+the power of number 2 ^ 2=4

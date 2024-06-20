@@ -1,0 +1,19 @@
+//create a program to find the sum of digits of a given numbers.
+#include<stdio.h>
+int main()
+{ int n,sum=0,i;
+printf("Enter the digit=");
+scanf("%d",&n);
+for(i=1;i<=n;i++)
+{sum=sum+i;
+printf("The sum of digits=%d\n",sum);}
+return 0;}
+//test
+Enter the digit=7
+The sum of digits=1
+The sum of digits=3
+The sum of digits=6
+The sum of digits=10
+The sum of digits=15
+The sum of digits=21
+The sum of digits=28

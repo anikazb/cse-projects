@@ -1,0 +1,12 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+int main() 
+{ int x,i,fact=1;
+// factorial starts with 1.like 1!=1 or 3!=1*2*3. 
+printf("Enter the value=");
+scanf("%d",&x);
+for(i=1;i<=x;i++)
+{fact=fact*i;
+printf("The factorial of the number=%d\n",fact);}
+    return 0;
+}

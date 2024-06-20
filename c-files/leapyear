@@ -1,0 +1,12 @@
+//create a program to check if a given year is a leap year.
+/* Find out the leap year=[if a year is divisible by 4(==0) and the same year is not divisible by 100(!=0) then its a leap year] or [the year is divisible by 400(==0) then its a leap year.]*/
+#include<stdio.h>
+int main()
+{ int year;
+printf("Enter the year:");
+scanf("%d",&year);
+if((year%4==0 && year%100!=0)||(year%400==0))
+{printf("YES!! The year is a leapyear.");}
+else
+{printf("NOPE!!The year is mot a leap year.");}
+return 0;}

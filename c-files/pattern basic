@@ -1,0 +1,71 @@
+/*pattern basic
+       one line row or one line in column*/
+       
+
+#include<stdio.h>
+int main()
+{ int n;
+printf("The num of rows=");
+scanf("%d",&n);
+for(n=1;n<=5;n++)
+printf("*",n);
+return 0;}
+/*
+test:
+The num of rows=5
+*****
+*/
+...............................
+#include<stdio.h>
+int main()
+{ int n;
+printf("The num of rows=");
+scanf("%d",&n);
+for(n=1;n<=5;n++)
+printf("%d",n);
+return 0;}
+/*
+test:
+The num of rows=5
+12345
+*/
+.......................
+#include<stdio.h>
+int main()
+{ int n;
+printf("The num of rows=");
+scanf("%d",&n);
+for(n=1;n<=5;n++)
+printf("1",n);
+return 0;}
+/*
+test:
+The num of rows=5
+11111
+*/
+...........................
+#include<stdio.h>
+int main()
+{ int n;
+printf("The num of rows=");
+scanf("%d",&n);
+for(n=1;n<=5;n++)
+printf("%d\n",n);
+return 0;}
+/*
+test:
+The num of rows=5
+1
+2
+3
+4
+5
+*/
+
+
+
+
+
+
+
+

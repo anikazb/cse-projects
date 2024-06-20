@@ -1,0 +1,13 @@
+//write a program to calculate the area and the perimeter of circle .
+//area=pi*r*r and perimeter=2*pi*r.
+#include<stdio.h>
+int main ()
+{ float area,perimeter,r;
+ const pi=3.1416;
+ printf("Enter the value of radius 'r' =");
+ scanf("%f",&r);
+ area=pi*r*r;
+ perimeter=2*pi*r;
+ {printf("The area of circle=%f\n",area);}
+ {printf("The perimeter of circle=%f\n",perimeter);}
+ return 0;}

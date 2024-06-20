@@ -1,0 +1,28 @@
+// argument,no return or pass the vlue to perameter
+//prime 
+#include <stdio.h>
+#include <math.h>
+void sum(int i,int n)
+{ 
+    int flag=1;
+  double sqroot=sqrt(n);
+   for(i=2;i<=n/2;i++)
+  {     if(n%i==0)
+     flag=0;
+  break;     }
+{  if(flag)
+{  printf("prime");  }
+  else
+{  printf("not prime");  }
+}
+}
+int main()
+{ int i,n;
+    printf("enter the num=");
+  scanf("%d",&n);
+      sum(i,n);
+    return 0;
+}
+
+//enter the num=7
+prime

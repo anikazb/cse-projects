@@ -1,0 +1,18 @@
+/*Write a program in C to find the sum of all integers between 51 and 150 which are
+divisible by 7*/
+#include<stdio.h>
+int main()
+{
+    int sum=0,i;
+for(i=51;i<=150;i++)
+  { 
+    if(i%7==0)
+ {sum=sum+i;}
+      
+  }
+printf("the sum of all integers between 51 and 150 which are divisible by 7 =%d\n",sum) ;  
+return 0;
+    
+}
+//test
+the sum of all integers between 51 and 150 which are divisible by 7 =1421

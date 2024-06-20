@@ -1,0 +1,39 @@
+/*rectangular=width(a)*lenth(b)
+circle=pi*a*a(let a=radius)
+square=a*a(lenth=width=a)
+triangle=1/2*a*b(a=base,b=height)
+*/
+#include<stdio.h>
+void sum(float a,float b)
+{ float area1,area2,area3,area4;
+const pi=3.1416;
+area1=a*b;
+area2=pi*a*a;
+area3=a*a;
+area4=a*b*1/2;//1/2*a*b=wrong
+             //a*b*1/2=right
+printf("Area of rectangular=%f\n",area1);
+printf("Area of circle=%f\n",area2);
+printf("Area of square=%f\n",area3);
+printf("Area of triangle=%f\n",area4); }
+int main()
+{ float a,b;
+printf("Value of a=");
+scanf("%f",&a);
+printf("Value of b=");
+scanf("%f",&b);
+sum(a,b);
+return 0;}
+/* test
+/tmp/AvF3WLUuUm.o
+Value of a=34
+Value of b=7.89
+Area of rectangular=268.260010
+Area of circle=3468.000000
+Area of square=1156.000000
+Area of triangle=134.130005
+*/
+
+
+
+

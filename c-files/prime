@@ -1,0 +1,22 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<math.h>
+int main() 
+{ int N,flag=1,i;
+//flag=1 means 1=true.
+//it indicates prime.
+double sqroot=sqrt(N);
+//The eqn of prime number.
+printf("Enter the value=");
+scanf("%d",&N);
+for(i=2;i<=N/2;i++)
+/* 2 is the smallest prime number and 1 is not a prime number.So,i=2 is fixed for whenever we check wheather the number is prime or not.Also "N" or "the output value" must be bigger or equal to i. */
+{ if(N%i==0)
+  flag=0;//false=0 and it indicates "not a prime"
+  break;}
+if(flag)
+{ printf("It's a prime number=%d",N);}
+else
+{printf("It's not a prime number=%d",N);}
+    return 0;
+}

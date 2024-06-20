@@ -1,0 +1,39 @@
+//pyramid
+//row dosent matter
+#include<stdio.h>
+int main()
+{ int column,row;
+printf("row=");
+scanf("%d",&row);
+printf("column=");
+scanf("%d",&column);
+int nst=1;
+int nsp=3;
+for(int i=1;i<=column;i++)
+{
+    for(int j=1;j<=nsp;j++)
+ { printf(" ");}
+ 
+ nsp=nsp-1;
+ 
+   for(int k=1;k<=nst;k++)
+ {printf("*");}
+ 
+ nst=nst+2;
+ 
+ printf("\n");}
+ return 0;}
+ 
+ 
+ 
+/*
+row=4
+column=4
+   *
+  ***
+ *****
+*******
+
+*/
+
+

@@ -1,0 +1,17 @@
+// WRITE A PROGRAM TO SWAP THE VALUES OF TWO VARIABLES.
+
+#include<stdio.h>
+int main()
+{ int a,b,c;
+/* "c"is the third variable.When we swap the variables of two values then we use third variables as store house of their values.*/
+printf("Enter the 1st value of a=");
+scanf("%d",&a);
+printf("Enter the 2nd value of b=");
+scanf("%d",&b);
+c=a;/*the value of "a" swaps to "c".So the store house "a" is blank that time.*/
+a=b;/*the value of "b" swaps to "a".because that variable "a" stores nothing so by swaping each other "a" variable contains "b"'s value and "b" variable stores nothing .So "b" is blank now.*/
+b=c;// Right now "b" variable remains blank so the value of "c" swaps to "b".though we take the variable "c" as store house. 
+
+printf("Swap the variables of a=%d\n",a);
+printf("Swap the variables of b=%d\n",b);
+return 0;}

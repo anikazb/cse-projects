@@ -1,0 +1,11 @@
+//implement a program to convert temp from celsius to fahrenheit.
+//(c/5)=[(f-32)/9]=[(k-273)/5]
+#include<stdio.h>
+int main()
+{ float Celsius,Fahrenheit;
+printf("Enter the Celsius Temp =");
+scanf("%f",&Celsius);
+Fahrenheit=(((Celsius/5)*9)+32);
+{printf("Converted temp from Celsius  to Fahrenheit=%f",Fahrenheit);}
+return 0;}
+

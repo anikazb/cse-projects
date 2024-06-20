@@ -1,0 +1,56 @@
+//find the perfect numbers between the given range.
+#include<stdio.h>
+int main()
+{ int start,end,n,i,sum;
+//if u declare here sum=0 thn it will give you wrong answer.
+//n=the loop of numbers in range.
+//i=the nested loop of perfect numbers in range.
+//sum=sum of all perfect numbers factors excluding the original perfect number itself
+/* A=6= 1x6  
+        3x2
+factors of 6=[1,2,3,6]
+the sum of them (exlcude 6)=(1+2+3)=6=B
+   so,   A=B=6  
+   its a perfect number. 
+
+ C=4=  1x4
+       2x2
+factors of 4=[1,2,4]
+the sum of them (exlcude 4)=(1+2=3)=D
+     so, C!=D
+     its not a perfect number. */
+ printf("The starting number of the range=");
+ scanf("%d",&start);
+ printf("The ending number of the range=");
+ scanf("%d",&end);
+ for(n=start;n<=end;n++)  //n++:(n=n+1)
+ { 
+     sum=0;
+     for(i=1;i<n;i++)
+    {
+     if(n%i==0) { 
+         sum=sum+i;
+     }
+    }
+    if(sum==n) {
+         printf("The perfect numbers are=%d\n",i);
+    }
+     
+ }
+
+ return 0;
+}
+ 
+ //test
+ 
+The starting number of the range=1
+The ending number of the range=100
+The perfect numbers are=6
+The perfect numbers are=28
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+
+#include<stdio.h>
+int main()
+{ int column,row;
+printf("row=");
+scanf("%d",&row);
+printf("column=");
+scanf("%d",&column);
+int a=1;
+for(int i=1;i<=column;i++)
+{ for(int j=1;j<=row;j++)
+ {printf("%d ",a);
+     a=2*a;
+ }
+ printf(" \n");}
+ return 0;}
+ 
+ a=2*a;
+ row=4
+column=5
+1 2 4 8  
+16 32 64 128  
+256 512 1024 2048  
+4096 8192 16384 32768  
+65536 131072 262144 524288  
+

@@ -1,0 +1,29 @@
+/*create a program to find the GCD(greatest common divisor) of two numbers.*/
+#include <stdio.h>
+int main()
+{ int GCD,a,b,r;
+   printf("Enter the value of a=");
+   scanf("%d",&a);
+    printf("Enter the value of b=");
+  scanf("%d",&b);
+  while(b!=0)
+  //if b=0 then it will stop the calculation of GCD.
+  //if r=0 thn b=0 must be.
+  { r=a%b;
+  a=b;
+  b=r;}
+  GCD=a;/*GCD means greatest value among them a,b,r.so when r=0 thn b=0 thn a!=0 so the value of a is bigger thn r,b.*/
+  {printf("The greatest common divisor=%d\n",GCD);}
+    return 0;}
+    
+    /* test example:
+    12=1x2x2x3
+    8=1x2x2x2
+    GCD=1x2x2=4 */
+    
+    
+    
+    
+    
+    
+

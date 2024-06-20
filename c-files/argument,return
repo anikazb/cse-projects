@@ -1,0 +1,22 @@
+//argument,return.
+#include<stdio.h>
+int sum(int i,int n)
+{ int fact=1;
+    for(i=1;i<=n;i++)
+{fact=fact*i;}
+return fact;}
+
+int main()
+{ int i,n,result;
+printf(".....");
+scanf("%d",&n);
+result=sum(i,n);
+{printf("....=%d\n",result);}
+return 0;}
+
+.....................................................................
+
+//test
+.....6
+....=720
+

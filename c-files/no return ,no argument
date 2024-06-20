@@ -1,0 +1,25 @@
+//no return ,no argument
+
+#include<stdio.h>
+void sum()
+{ int n,i,fact=1;
+printf("enter the number=");
+scanf("%d",&n);
+for(i=1;i<=n;i++)
+{fact=fact*i;
+printf("the factorial of given number=%d\n",fact);}
+}
+int main()
+{ sum();
+return 0;}
+.................................................................................
+
+//test:
+
+enter the number=5
+the factorial of given number=1
+the factorial of given number=2
+the factorial of given number=6
+the factorial of given number=24
+the factorial of given number=120
+

@@ -1,0 +1,69 @@
+/* 1
+   1 2
+   1 2 3
+   1 2 3 4 
+   */
+   // in this type only column number matters
+ #include<stdio.h>
+ int main()
+ { 
+     int row;
+     int column;
+ printf("row=");
+ scanf("%d",&row);
+ printf("column=");
+ scanf("%d",&column);
+ for(int i=1;i<=column;i++)
+ { 
+     for(int j=1;j<=i;j++)
+ { 
+     printf("%d ",j);
+     
+ }
+ printf(" \n",i);
+     
+ }
+ return 0;
+ }
+/*
+
+test:
+row=7
+column=7
+1  
+1 2  
+1 2 3  
+1 2 3 4  
+1 2 3 4 5  
+1 2 3 4 5 6  
+1 2 3 4 5 6 7  
+
+..........................
+
+row=2
+column=8
+1  
+1 2  
+1 2 3  
+1 2 3 4  
+1 2 3 4 5  
+1 2 3 4 5 6  
+1 2 3 4 5 6 7  
+1 2 3 4 5 6 7 8 
+
+........................
+
+if i declare star then printf("* ");
+row=4
+column=9
+*  
+* *  
+* * *  
+* * * *  
+* * * * *  
+* * * * * *  
+* * * * * * *  
+* * * * * * * *  
+* * * * * * * * *  
+
+ */

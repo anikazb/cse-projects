@@ -1,0 +1,190 @@
+/* given an array of marks pf students ,if the mark of any student is less than 35 print its rollnum.roll num here refers to the index of the array */
+
+#include <stdio.h>
+
+int main() {
+    int marks[5]={90,60,23,87,31};
+    printf("The marks distribution,\n",marks[5]);
+    for(int i=0;i<=4;i++)
+    { if(marks[i]<35)
+   { printf("the roll number is:%d\n",marks[i]);}
+   else
+  {printf("you got a great marks:%d\n",marks[i]);}
+    }
+    return 0;}
+ output   
+    The marks distribution,
+the roll number is:23
+the roll number is:31 
+....................................
+
+if u want to show index num
+
+printf("the roll number is:%d\n",i);}
+The marks distribution,
+the roll number is:2
+the roll number is:4
+
+
+
+//caculate the sum of all the elements in the given array 
+
+#include<stdio.h>
+int main()
+{
+int n;
+{printf("The size of array=");
+scanf("%d",&n);}
+
+int arr[n],sum=0;
+
+for(int i=0;i<n;i++)
+{printf("The nums are:");
+scanf("%d",&arr[i]);
+ sum=sum+arr[i];}
+
+printf("The sum of all elements in the given array:%d\n",sum);
+return 0;}
+
+output
+
+The size of array=4
+The nums are:1
+The nums are:1
+The nums are:3
+The nums are:2
+The sum of all elements in the given array:7
+
+
+=== Code Execution Successful ===
+
+
+
+//the max value of the array
+
+#include<stdio.h>
+int main()
+{
+    int array[5]={20,79,7,4,3};
+ int max=-1;// taking the minimum value of the array(min) just to compare with each other because we have to find out the max value 
+ for(int i=0;i<5;i++)
+ { if(max<array[i])
+    {
+        max=array[i];  }
+     
+ }
+     printf("the maximum value=%d\n",max);
+ 
+return 0;}
+output
+the maximum value=79
+
+
+//the min value of the array
+
+#include<stdio.h>
+int main()
+{
+    int array[5]={20,79,7,4,3};
+ int minimum=80;// taking the max value of the array(max) just to compare with each other because we have to find out the min value 
+ for(int i=0;i<5;i++)
+ { if(minimum>array[i])
+    {
+        minimum=array[i];  }
+     
+ }
+     printf("the minimum value=%d\n",minimum);
+ 
+return 0;}
+output
+the minimum value=3
+
+
+//sum and avg of array
+
+#include<stdio.h>
+int main()
+{ int n,sum=0;
+float avg;
+printf("Enter the number=");
+scanf("%d",&n);
+int arr[n];
+for(int i=0;i<n;i++)
+{scanf("%d",&arr[i]);
+sum=sum+arr[i];}
+{printf("Sum of total num:%d\n",sum);}
+
+avg=sum/n;
+{printf("Avarage value of num:%f\n",avg);}
+return 0;}
+
+output
+
+Enter the number=2
+1
+9
+Sum of total num:10
+Avarage value of num:5.000000
+
+
+//find both values and indexes of maximum and minimum elements of an array.
+
+
+#include<stdio.h>
+int main()
+{
+    int n;
+printf("Enter the num:");
+scanf("%d",&n);
+int arr[n];
+for(int i=0;i<n;i++)
+{ 
+    scanf("%d",&arr[i]);
+    
+}
+
+int max,min;
+max=arr[0];
+min=arr[0];
+{ for(int i=1;i<n;i++)
+  {
+       {   if(max<arr[i])
+   { max=arr[i]; }
+       }
+        {   if(min>arr[i])
+          {     min=arr[i];     }
+        }
+  }
+    
+}
+printf("Maximum value=%d\n",max);    
+ printf("Minimum value=%d\n",min);   
+return 0;
+    
+}
+
+output
+
+Enter the num:3
+40
+6
+1
+Maximum value=40
+Minimum value=1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
