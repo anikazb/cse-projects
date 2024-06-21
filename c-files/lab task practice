@@ -1,0 +1,178 @@
+/* 1. Write a C program to enter the radius of a circle and find its circumference and area. Note that
+Circumference = 2 x π x radius, Area = π x (radius)2
+
+, and assume π=3.1416
+
+Input : 2
+Output 12.56 */
+
+include<stdio.h>
+#include<math.h> //using pow function
+#define pi 3.1416 //no semi-colons
+int main()
+{
+    float r; 
+    //declare float pi=3.1416 instead of #define_pi_3.1416
+ printf("Enter the radius of a circle:\t")  ;
+ scanf("%f",&r);
+ float circumference;
+ circumference=2*pi*r;
+ printf("Circumference=%.2f \n",circumference);
+ float area;
+ area=pi*pow(r,2); // otherwise r*r*r 
+ printf("Area=%.2f \n",area);
+
+    return 0;
+}
+
+
+/*5. Find out average of four numbers .Input: 5 8 4 6
+Output: Average = 5.75 */
+
+#include<stdio.h>
+int main()
+{
+int n,i;
+printf("Enter the value:\t");
+scanf("%d",&n);
+int num[n];
+for(i=0;i<n;i++)
+
+{
+    printf("Number=");
+    scanf("%d",&num[i]);
+}
+
+int sum=0;
+for(i=0;i<n;i++)
+{
+    sum=sum+num[i];
+}
+printf("Total sum=%d\n",sum);
+float avg;
+avg=sum/n;
+printf("Avarage= %.2f\n",avg);
+
+    return 0;
+}
+
+
+/* 6. Convert Celsius temperature to Fahrenheit.
+T (°F) = T (°C) × 9/5 + 32
+Input: 20
+Output: Celsius = 68
+*/
+#include<stdio.h>
+int main()
+{
+   float f,c;
+   printf("Enter the Celcius Temperature=");
+   scanf("%f",&c);
+   f=c*9/5+32;
+   printf("Fahrenhite Temperature=%.2f",f);
+  
+    return 0;
+}
+
+
+/*
+3. Write a C program that takes number of days as input, and then converts it into years ,month,week and days,
+and displays the results. Assume that, 1 year = 365 days.
+Input : 789
+Output : 2 years  1 months 4 weeks 1 days  */
+
+#include<stdio.h>
+int main()
+// 1year=365days
+{
+  int n  ;
+  printf("Enter the num of days : ");
+    scanf("%d",&n);
+    
+ int years,days,weeks,months;
+ years=n/365;
+     printf("Years = %d\n",years);
+     //1 month=30days
+   months=(n%365)/30;  
+     printf("Months = %d\n",months); 
+     //1 week=7days
+      weeks=((n%365)%30)/7;  
+     printf("Weeks = %d\n",weeks); 
+     
+      days=((n%365)%30)%7;  
+     printf("Weeks = %d\n",days); 
+     
+      printf("%d years %d months %d weeks %d days",years,months,weeks,days);
+    
+    return 0;
+}
+
+/*
+3. Write a C program that takes number of days as input, and then converts it into years and days,
+and displays the results. Assume that, 1 year = 365 days.
+Input : 735
+Output : 2 years 5days */
+
+#include<stdio.h>
+int main()
+// 1year=365days
+{
+  int n  ;
+  printf("Enter the num of days : ");
+    scanf("%d",&n);
+    
+ int years,days;
+ years=n/365;
+     printf("Years = %d\n",years);
+   days=n%365;  
+     printf("Days = %d\n",days); 
+     
+      printf("%d years %d days",years,days);
+    
+    return 0;
+}
+
+/*3. Write a program to check whether the entered year is leap year or not (a year is leap if it
+is divisible by 4 and divisible by 100 or 400.)
+Enter the year=2001
+NOT LEAPYEAR
+Enter the year=2012
+LEAPYEAR
+*/
+#include<stdio.h>
+int main()
+{
+  int n;
+  printf("Enter the year=");
+  scanf("%d",&n);
+  if(n%4==0 && n%100!=0 || n%400==0)
+    {
+        printf("LEAPYEAR");
+    }
+  else
+  printf("NOT LEAPYEAR")  ;
+    
+    return 0;
+}
+
+
+/* 2. Write a program that asks a number and test the number whether it is multiple of 5,
+divisible by 7 but not by eleven.
+Enter the number=35
+test ok
+*/
+#include<stdio.h>
+int main()
+{
+  int n;
+  printf("Enter the number=");
+  scanf("%d",&n);
+  if(n%5==0 && n%7==0 && n%11!=0)
+    {
+        printf("test ok");
+    }
+  else
+  printf("test not ok")  ;
+    
+    return 0;
+}
