@@ -176,3 +176,133 @@ int main()
     
     return 0;
 }
+
+/*1. Write a program to find the largest and smallest among
+three entered numbers and also display whether the identified largest/smallest number is even or odd.*/
+#include<stdio.h>
+int main()
+{
+int a,b,c;
+printf("Enter three numbers: ");
+scanf("%d%d%d",&a,&b,&c);
+//largest num with even or odd finding
+if(a>b&&a>c ||b>a&&b>c ||c>a&&c>b)
+{
+    
+    if(a%2==0)
+    {
+        printf("largest even number.%d\n",a);
+    }
+    else
+    {
+         printf("largest odd number.%d\n",a); 
+    }
+    if(b%2==0)
+    {
+        printf("largest even number.%d\n",b);
+    }
+    else
+    {
+         printf("largest odd number.%d\n",b); 
+    }
+    if(c%2==0)
+    {
+        printf("largest even number.%d\n",c);
+    }
+    else
+    {
+         printf("largest odd number.%d\n",c); 
+    }
+}
+
+ //smallest num with even or odd finding  
+  if(b>a&&c>a ||a>b&&c>b ||a>b&&b>c)
+{
+    
+    if(a%2==0)
+    {
+        printf("smallest even number.%d\n",a);
+    }
+    else
+    {
+         printf("smallest odd number.%d\n",a); 
+    }
+    if(b%2==0)
+    {
+        printf("smallest even number.%d\n",b);
+    }
+    else
+    {
+         printf("smallest odd number.%d\n",b); 
+    }
+    if(c%2==0)
+    {
+        printf("smallest even number.%d\n",c);
+    }
+    else
+    {
+         printf("smallest odd number.%d\n",c); 
+    }
+}  
+  return 0;
+}
+    
+ /*4. Write a program that will give a choice menu. Using if for coding
+Take two inputs and one operator and do the calculation.
+Press ‘+’: Add two numbers
+Press ‘-’: Subtract two numbers
+Press ‘*’: Multiply two numbers
+Press ‘/’: Division two numbers*/
+#include<stdio.h>
+int main()
+{
+   char opt;
+  float first, second;
+  printf("Enter an operator (+, -, *, /): ");
+  scanf("%c", &opt);
+  printf("Enter two operands: ");
+  scanf("%f %f", &first, &second); 
+  //%.2f not execute when we take values for float in scanf.we do use it only for printf
+ //choice a menu(char) then we should use switch case formula
+ //condition then use switch or if else
+ switch(opt)
+{
+    case'+':
+    
+        printf("addition:%.2f+%.2f=%.2f",first,second,first+second);
+        break;
+    
+      case'-':
+    
+        printf("Subtraction:%.2f-%.2f=%.2f",first,second,first-second);
+        break;
+    
+      case'*':
+    
+        printf("Multiplication:%.2f*%.2f=%.2f",first,second,first*second);
+        break;
+    
+      case'/':
+    
+       printf("Division:%.2f/%.2f=%.2f",first,second,first/second);
+        break;
+      
+  default:
+      printf("Error! operator is not correct");  
+}    
+    
+    
+return 0;    
+    
+}   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+

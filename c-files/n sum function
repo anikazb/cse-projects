@@ -15,7 +15,7 @@ int main()
 return 0;}
 
 
-//test
+/*test
 enter the number=10
 the total sum of num=1
 the total sum of num=3
@@ -27,5 +27,6 @@ the total sum of num=28
 the total sum of num=36
 the total sum of num=45
 the total sum of num=55
+*/
 
 
