@@ -1,0 +1,134 @@
+/*1. Write a program to input two integer numbers and display the sum of even numbers between these two input numbers.*/
+
+#include<stdio.h>
+int main()
+{
+ int a,b;
+ printf("enter the numbers ,\n ");
+ scanf("%d%d",&a,&b);
+ int i,sum=0;
+ for(i=a;i<=b;i++)
+ {
+     if(i%2==0)
+     {
+         sum=sum+i;
+     }
+ }
+  printf("Sum of even numbers=%d\n",sum)  ;
+ return 0;
+}
+   
+   
+    /*2. Write a program to calculate and display the sum and average of first n odd natural numbers*/
+
+ #include<stdio.h>   
+ int main()
+ {
+     int n;
+     printf("enter value:");
+     scanf("%d",&n);
+     int i;
+     //odd number addition=sum,odd num avg=count
+     /*we use another declare as count or any name beacause how many odd numbers we get we dont know actually so we have to count on behalf of calculating avg=sum/the nums of odd*/
+     int sum=0,count=0;
+     for(i=0;i<=n;i++)
+     {
+        if(i%2!=0)
+       {
+           count++; // now we know the numbers of odd num
+         sum=sum+i;  //odd num addition
+       } 
+     }
+     printf("SUM of odd numbers= %d\n",sum);
+     float avg;
+     avg=sum/count;
+     printf("AVG of odd num= %.2f\n",avg);
+   return 0;  
+ }
+    
+
+
+    /*4. Write a program to display Fibonacci series of last term up to 300.*/
+
+#include<stdio.h>
+int main()
+{
+ int a=0,b=1;
+ printf("1ST VALUE=%d\n",a);
+  printf("2ND VALUE=%d\n",b);
+int c;
+c=a+b;
+printf("NEXT VAlUE=%d\n",c);
+int n;
+ printf("Enter the number= ");
+ scanf("%d",&n);
+ printf("Fibonacci series ,\n");
+ //i=[index num=3]=c=[a+b]
+ //bcz a=[index num=1],b=[index num=2]
+ /* whwn we use loop we have to mention index number always as a value of i,
+                 a= 0=1st index
+                 b= 1=2nd index
+                 c=a+b =3rd index
+ */
+ for(int i=3;i<=n;++i) 
+ //++i=fibonacci series prefer pre-incriment
+    {
+      //next value follow their rules a,b,c(a+b)
+                            
+       a=b;
+       b=c;
+       c=a+b;
+        printf("%d\n",c);
+    }
+    
+   return 0;
+    
+    
+    
+}
+
+
+/*5. Write a program to print the numbers from 1 to 10 and their squares using
+while/do while /for Loop.*/
+
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int i;
+    printf("Numbers,\n");
+    for(i=1;i<=10;i++)
+    {
+        printf("%d\n",i);
+    }
+    int square;
+    printf("Square Numbers,\n");
+    for(i=1;i<=10;i++)
+    {
+        square=pow(i,2);
+        printf("%d\n",square);
+    }
+    return 0;
+}
+
+/*
+6. Write a program using while/do while /for Loop to calculate the factorial value
+of any integer entered through the keyboard.
+Input: 5
+Output: 120 */
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("enter=");
+    scanf("%d",&n);
+    int i,factorial=1;
+    for(i=1;i<=n;i++)
+    {
+        factorial=factorial*i;
+     
+    }
+printf(" \n"); 
+    printf("factorial!=%d\n",factorial);
+    return 0;
+}
