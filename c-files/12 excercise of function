@@ -117,3 +117,56 @@ Input any number : 5
 The entered number is odd.   */
 
 === Code Execution Successful ===
+
+
+
+5. Write a program in C to find the sum of the series 1!/1+2!/2+3!/3+4!/4+5!/5 using the function.
+Expected Output :
+ The sum of the series is : 34 
+ //rules of this pattern= bigger then 1 and factorial=1 constant ,factorial=fact+fact*num which is bigger thn 1.
+ //with return with parameter
+#include<stdio.h>
+int boby(int n) //n for range
+{                   //i = loop 
+   int fact=1,i; // fact=1[const] 0!=1 
+   for(i=0;i<n;i++)
+   {
+       fact=fact+fact*i;
+     
+   }
+  
+    return fact;
+}
+int main()
+{
+    int x;
+    printf("Enter number : ");
+    scanf("%d",&x);
+  /*  int factorial=boby(x);
+    printf("here =%d\n",factorial);//5!/5=24 ,24*5=120
+    so no need to store bcz no addition is here only call function by name*/
+    boby(x);
+    printf("%d\n",boby(1)/1);
+     printf("%d\n",boby(2)/2);
+     printf("%d\n",boby(3)/3);
+     printf("%d\n",boby(4)/4);
+      printf("%d\n",boby(5)/5); 
+       printf("%d\n",boby(6)/6); 
+    int sum;
+    sum=boby(1)/1+boby(2)/2+boby(3)/3+boby(4)/4+boby(5)/5+boby(6)/6;
+    printf("SUM = %d\n",sum);
+    
+      
+    return 0;
+}/*
+Enter number : 6
+1
+1
+2
+6
+24
+120
+SUM = 154
+*/
+
+=== Code Execution Successful ===
