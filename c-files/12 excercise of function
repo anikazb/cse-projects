@@ -1,0 +1,119 @@
+1. Write a program in C to show the simple structure of a function.Expected Output :The total is :  11  
+//no return no parameter
+#include <stdio.h>
+//void is no return type
+void anika() //function name
+{ 
+    int a=9,b=2,sum; 
+  sum=a+b;
+    printf("The total is: %d",sum);
+
+}
+int main()
+{
+   anika(); //using semi-colon means by name function calling
+    return 0;
+}
+//The total is: 11
+
+=== Code Execution Successful ===
+
+
+
+2. Write a program in C to find the square of any number using the function.
+Test Data :
+Input any number for square : 20
+Expected Output :The square of 20 is : 400.00 
+//with return no parameter
+#include<stdio.h>
+#include<math.h>
+int samia()
+{
+    int x,power;
+    printf("Enter the number: ");
+    scanf("%d",&x);
+    power=pow(x,2);
+    return power;
+
+}
+int main()
+{
+ int result;
+ result=samia();
+ printf("The square of x is:%d ",result);
+ 
+    return 0;
+}
+/*
+Enter the number: 20
+The square of x is:400  */
+
+=== Code Execution Successful ===
+
+
+
+3. Write a program in C to swap two numbers using a function.
+Test Data :
+Input 1st number : 2
+Input 2nd number : 4
+Expected Output :
+Before swapping: n1 = 2, n2 = 4                     
+After swapping: n1 = 4, n2 = 2 
+//no return no parameter
+#include<stdio.h>
+void farwa()
+{
+ int swap,n1=2,n2=4;
+ printf("1st number n1 : 2\n 2nd number n2 : 4\n");
+ swap=n1;
+ n1=n2;
+ n2=swap;
+ printf("After swapping : n1 = %d , n2 = %d",n1,n2);
+    
+}
+int main()
+{
+ farwa()   ;
+    return 0;
+}
+/*
+1st number n1 : 2
+ 2nd number n2 : 4
+After swapping : n1 = 4 , n2 = 2   */
+
+=== Code Execution Successful ===
+
+
+
+4. Write a program in C to check if a given number is even or odd using the function.
+Test Data :
+Input any number : 5
+Expected Output :
+ The entered number is odd.  
+ //no return no parameter
+ #include<stdio.h>
+ void sejuti()
+ {
+   int a;
+   printf("Input any number : ");
+   scanf("%d",&a);
+     if(a%2==0)
+     {
+         printf("The entered number is even.");
+     }
+     else
+     {
+       printf("The entered number is odd.");  
+     }
+    
+ }
+ int main()
+{
+    sejuti()  ;                            
+    return 0;
+}
+/* 
+Input any number : 5
+The entered number is odd.   */
+
+=== Code Execution Successful ===

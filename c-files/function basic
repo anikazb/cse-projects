@@ -70,7 +70,7 @@ int main()
    printf("enter two num=");
    scanf("%d%d",&x,&y);
    //int result=add(10,20); //=30 
-   int result=add(x,y);//as temporary x=a,y=b
+   int result=add(x,y);//as temporary x=a,y=b   //store means addition
    printf("sum is=%d",result);
     return 0;
 }
