@@ -1,0 +1,26 @@
+/*1. Write a program to print the following series up to n terms where n is a user input.[1,3,6,10,15...]
+(1) + (1+2) +(1+2+3) + (1+2+3+4) + (1+2+3+4+5) + ........... */
+#include<stdio.h>
+int main()
+{
+    int n,i,j,sum=0;
+    printf("Assign the value= ");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++) //i loop for increse the number gradually 1 to 2 to 3....
+    {
+        sum=0;
+        for(j=1;j<=i;j++)// j loop for that additional part which also increses gradually
+        {
+            sum=sum+j;
+        }
+        printf("%d\t",sum);
+    }
+
+
+
+    return 0;
+}
+/*
+Assign the value= 10
+1	3	6	10	15	21	28	36	45	55	
+*/
