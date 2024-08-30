@@ -1,0 +1,76 @@
+// function =if sum 5 times
+#include <stdio.h>
+
+/*int main()*/ 
+//void add () add fun name
+int add()
+{
+    int a,b,sum;
+    printf("enter the two num=");
+scanf("%d%d", &a,&b); //a=10 b=20
+sum=a+b;
+//printf("sum=%d",sum);
+    //return 0;
+ return sum;   
+}
+int main()
+{ 
+  //  add() ; // by name function calling
+   int result=add(); //=30 
+   printf("sum is=%d",result);
+    return 0;
+}
+
+// function =if sum 5 times
+#include <stdio.h>
+void add();//;=signature name at first call
+
+int main()
+{  add() ; // by name function calling
+    
+    return 0;
+}
+
+//int main() 
+void add ()//add fun name
+{
+    int a,b,sum;
+    printf("enter the two num=");
+scanf("%d%d", &a,&b);
+sum=a+b;
+printf("sum=%d",sum);
+    //return 0;
+}
+int main()
+{  add() ; // by name function calling
+    
+    return 0;
+}
+
+
+
+// function =if sum 5 times
+#include <stdio.h>
+
+
+int add(int a, int b)//with return and parameter
+{
+    int sum;
+   // printf("enter the two num=");
+//scanf("%d%d", &a,&b); //a=10 b=20
+sum=a+b;
+//printf("sum=%d",sum);
+    
+ return sum;   
+}
+int main()
+{ 
+   // by name function calling add
+   int x,y;
+   printf("enter two num=");
+   scanf("%d%d",&x,&y);
+   //int result=add(10,20); //=30 
+   int result=add(x,y);//as temporary x=a,y=b
+   printf("sum is=%d",result);
+    return 0;
+}
