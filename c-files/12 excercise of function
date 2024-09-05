@@ -170,3 +170,42 @@ SUM = 154
 */
 
 === Code Execution Successful ===
+*7. Write a program in C to check whether a number is a prime number or not using the function.
+Test Data :Input a positive number : 5
+Expected Output :The number 5 is a prime number. */
+//with return with parameter
+#include<stdio.h>
+int brinto(int n)
+{
+    int i;
+    for(i=2;i<=n/2;i++)
+    {
+        if(n%2==0)
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+int main()
+{
+   int n,prime;
+   printf("Input the number : ");
+   scanf("%d",&n);
+   prime=brinto(n);
+   if(prime==1)
+   {
+       printf("prime");
+   }
+   else
+   {
+       printf("not prime");
+   }
+   return 0;
+}
+
+Input the number : 6
+not prime
+
+=== Code Execution Successful ===
+
