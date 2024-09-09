@@ -223,4 +223,122 @@ avg :7.000000
 
 === Code Execution Successful ===
 
+2. Write a program to split even and odd elements of an array into two arrays.
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("take:\t");
+    scanf("%d",&n);
+    int i,a[n];
+    printf("input num : ");
+    for(i=0;i<n;i++)
+  { 
+      scanf("%d",&a[i]);
+  }
+  //sum 
+  for(i=0;i<n;i++)
+  { 
+      if(a[i]%2==0)
+      { 
+          printf("even :%d\n",a[i]);
+      }
+    
+      else
+      {
+             printf("odd :%d\n",a[i]);
+         
+      }
 
+  }
+  
+  return 0;
+}
+/tmp/exw3SVuQaR.o
+take:	6
+input num : 7
+9
+3
+2
+1
+5
+odd :7
+odd :9
+odd :3
+even :2
+odd :1
+odd :5
+
+/*
+  C program to delete all duplicate elements from array
+ */
+
+#include <stdio.h>
+
+#define max 100 // Maximum size of the array
+
+int main()
+{
+   
+  
+    int i, j, k;       // Loop control variables
+     int n; // Total number of elements in array
+    /* Input size of the array */
+    printf("Enter size of the array : ");
+    scanf("%d", &n);
+int arr[max]; // Declares an array of size 100
+    /* Input elements in the array */
+    printf("Enter elements in array : ");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+//before deleting duplicate
+    
+    for(i=0; i<n; i++)
+    {//comparing with the first element to 2nd one and to be continued(i compares with j)
+      //find out the duplicate among them // [0], [0]+1=[1], [1]+1=[2].....[3][4]..
+        for(j=i+1; j<n; j++)
+        { 
+    
+            
+            if(arr[i] == arr[j])// duplicate found
+            {
+                /* Delete the current duplicate element (size reduce)*/
+                for(k=j; k < n - 1; k++)
+                {
+                    arr[k] = arr[k + 1];
+                }
+
+                /* Decrement size after removing duplicate element */
+                n--;//size decrement
+
+                /* If shifting of elements occur then don't increment j */
+                j--;//num of element reduction occur for shifting to left side
+            }
+        }
+    }
+
+
+    /*
+     * Print array after deleting duplicate elements
+     */
+    printf("\nArray elements after deleting duplicates : ");
+    for(i=0; i<n; i++)
+    {
+        printf("%d\t", arr[i]);
+    }
+
+    return 0;
+}
+
+/tmp/sjrizQJwLs.o
+Enter size of the array : 3
+Enter elements in array : 5
+7
+5
+
+Array elements after deleting duplicates : 5	7	
+
+=== Code Execution Successful ===
