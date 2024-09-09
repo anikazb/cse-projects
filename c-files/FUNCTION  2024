@@ -1,0 +1,62 @@
+//Find Grade of a Student using Function
+//with return with parameter
+#include<stdio.h>
+char findgrade(int marks) //grade depends on marks
+{
+    if(marks<0 || marks>100)
+    {
+        return 0; //null=return 0='/0'
+    }
+if(marks>=90 && marks<=100) //90-100
+    {
+        return 'A';
+    }
+  else  if(marks>=80 && marks<90) //80-89
+    {
+        return 'B';
+    }
+  else  if(marks>=60 && marks<80) //60-80
+    {
+        return 'C';
+    }
+  else  if(marks>=40 && marks<60) //40-60
+    {
+        return 'D';
+    }
+    else //39-0
+    {
+       return 'F'; 
+    }
+}
+int main()
+{
+    char grade;
+    int marks;
+    
+    printf("Enter your marks : ");
+    scanf("%d",&marks);
+    grade=findgrade(marks);
+    if(grade=='\0')
+    {
+        printf("invalid");
+    }
+    else
+    {
+        printf("Grade : %c\n",grade);
+    }
+    return 0;
+}
+Enter your marks : 45
+Grade : D
+
+
+=== Code Execution Successful ===
+
+
+
+
+
+
+
+
+
