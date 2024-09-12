@@ -54,6 +54,64 @@ enter varriables:0
 === Code Execution Successful ===
 */
 
+//array basic
+
+
+// 2d array
+#include <stdio.h>
+
+int main() {
+  // int a[5]={1,2,3,4,5};
+ //  a[3]
+   int b[3][3]={(1,2,3)
+               ,(4,5,6),
+             (7,8,9)}; //3 row 3 col
+  // b[0][3]=20;
+   //printf("%d",b[2][2]) ;
+   int i,j;
+for(i=0;i<3;i++) //row
+{
+    for(j=0;j<3;j++)
+    {
+        scanf("%d",&b[i][j]);
+    }
+  printf("\n");  
+}
+printf("\n");
+
+for(i=0;i<3;i++) //row
+{
+    for(j=0;j<3;j++)
+    {
+        printf(" %d\t",b[i][j]);
+    }
+    printf("\n");
+}
+
+    return 0;
+}
+/tmp/x1oa89piOc.o
+2
+3
+4
+
+4
+6
+1
+
+6
+7
+8
+
+
+ 2	 3	 4	
+ 4	 6	 1	
+ 6	 7	 8	
+
+
+=== Code Execution Successful ===
+
+
 
 
 
