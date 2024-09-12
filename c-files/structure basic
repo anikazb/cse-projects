@@ -1,3 +1,90 @@
+// ********most important structure with array ******8
+#include <stdio.h>
+struct mystruct {
+  int id;
+  float cgpa;
+};
+int main() {
+  int a[5]={1,2,3,4,5};
+  a[0]=10;
+  //array structure
+  struct mystruct student[2];
+  //student[0].id=123
+  //using loop to do 5 mems details
+  int i;
+  for(i=0;i<2;i++)
+  {
+      printf("enter id :%d\n",i+1);
+      scanf("%d",&student[i].id);
+       printf("enter cg :%d\n",i+1);
+      scanf("%f",&student[i].cgpa);
+  }
+  for(i=0;i<2;i++){
+      printf("id no of student :%d \n ",i+1,student[i].id);
+       printf("cg  of student :%.2f \n ",i+1,student[i].cgpa);
+  }
+  
+  //struct mystruct student={1234,3.78};
+  //struct veriable name
+/*student.id=1034;
+student.cgpa=3.90;
+//if ypu do user input
+scanf("%f",&student.cgpa);
+printf("id:%d\n",student.id);
+printf("cgpa:%f\n",student.cgpa);*/
+    return 0;
+}
+/*
+#include<string.h>
+// char name[30];
+gets(student[i].name); //loop lgbena //input
+puts()                 //output
+*/
+
+/tmp/k7oo35J8Xn.o
+enter id :1
+2
+enter cg :1
+33
+enter id :2
+3
+enter cg :2
+44
+id no of student :1 
+ cg  of student :33.00 
+ id no of student :2 
+ cg  of student :44.00 
+ 
+
+=== Code Execution Successful ===
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Use a structure to store different information about Cars.
                                 //using string
 
