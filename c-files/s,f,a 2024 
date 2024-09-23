@@ -1,0 +1,271 @@
+//id, sec ,cgpa,grade marks
+#include <stdio.h>
+#include<string.h>
+//#define MAX_student 100
+struct student
+{
+ int id;
+ char section[20];
+ float marks;
+ char grade; 
+ float cgpa;
+ char name[80];
+};
+
+//grade calculation(depends on marks)
+
+char calculate_grade(struct student f) //major point =marks(input user),minor =grade
+{
+if(f.marks<0 || f.marks>100 )
+{
+    return '\0';
+}
+if( f.marks>=80 &&  f.marks<=100)
+{
+    return 'A'; //grade as a single character = %c 
+}
+else if( f.marks>=60 &&  f.marks<=79)
+{
+    return 'B';
+}
+else if( f.marks>=45 &&  f.marks<=59)
+{
+    return 'C';
+}
+else
+{
+    return 'F';
+}
+}
+
+//cgpa calculation(depends on grade)
+
+float calculate_cgpa(char grade) //minor way =grade (not stored instruct student that time)(no user input)
+{
+    if(grade=='A')
+    {
+        return 4.00 ;
+    }
+   else if(grade=='B')
+    {
+        return 3.00 ;
+    }
+   else if(grade=='C')
+    {
+        return 2.00 ;
+    }
+    else
+    {
+        return 1.00 ; 
+    }
+}
+ 
+
+int  main()
+{
+    struct student s[2];
+    int i;
+    char grade;
+    float cgpa;
+    for(i=0;i<2;i++) 
+{
+    printf("\n Details of Student number :%d\n",i+1);
+    
+    printf("Student id:");
+    scanf("%d",&s[i].id);
+    
+     printf("Student name:");
+    scanf("%s",&s[i].name);
+    
+     printf("Student section:");
+    scanf("%s",&s[i].section);
+    
+     printf("Student marks:");
+    scanf("%f",&s[i].marks);
+    
+    grade=calculate_grade(s[i]);
+   /*  printf("Student grade:");
+    scanf("%s",&s[i].grade); */
+    if(grade=='\0') //null charectare
+    {
+        printf("invalid");
+    }
+    else
+    { 
+        s[i].grade = grade; //grade stores in struct student (major fixed input)
+        printf("Grade : %c\n",s[i].grade);
+    }
+    
+   cgpa= calculate_cgpa(s[i].grade);
+   s[i].cgpa = cgpa; //cgpa stores in struct student (major fixed input)
+  /*  printf("Student cgpa:");
+    scanf("%f",&s[i].cgpa);  */
+   printf("CGPA : %f\n",cgpa); 
+   
+}
+printf("\n");
+ for(i=0;i<2;i++)
+ {
+     printf("Student number :%d\n",i+1);
+     printf("id:%d\n",s[i].id);
+     printf("name:%s\n",s[i].name);
+     printf("section:%s\n",s[i].section);
+     printf("marks:%f\n",s[i].marks);
+     printf("grade:%c\n",s[i].grade); //Print grade as a single character
+     printf("cgpa:%f\n",s[i].cgpa);
+ }
+ return 0 ;
+}
+
+/tmp/ZKyX5XpStV.o
+
+ Details of Student number :1
+Student id:45
+Student name:GHU
+Student section:F
+Student marks:70
+Grade : B
+CGPA : 3.000000
+
+ Details of Student number :2
+Student id:55
+Student name:VVS\
+Student section:C
+Student marks:67
+Grade : B
+CGPA : 3.000000
+
+Student number :1
+id:45
+name:GHU
+section:F
+marks:70.000000
+grade:B
+cgpa:3.000000
+Student number :2
+id:55
+name:VVS
+section:C
+marks:67.000000
+grade:B
+cgpa:3.000000
+
+
+=== Code Execution Successful ===
+
+
+
+
+.....................................................................................................................
+
+#include <stdio.h>
+#include <string.h>
+
+struct student {
+    char name[30];
+    int id;
+    float marks[6];  // Array to store marks of 6 subjects
+    char grade[6][3];  // String array to store grades for each subject
+    float gpa[6];  // Array to store GPA for each subject
+    float cgpa;
+};
+
+// Grade calculation based on marks
+const char* calculate_grade(float marks) {
+    if (marks < 0 || marks > 100) {
+        return "0";  // Invalid grade
+    }
+    if (marks >= 95) {
+        return "A+";
+    } else if (marks >= 85) {
+        return "A";
+    } else if (marks >= 80) {
+        return "A-";
+    } else if (marks >= 75) {
+        return "B+";
+    } else if (marks >= 70) {
+        return "B";
+    } else if (marks >= 60) {
+        return "B-";
+    } else {
+        return "F";
+    }
+}
+
+// GPA calculation based on grades
+float calculate_gpa(const char* grade) {
+    if (strcmp(grade, "A+") == 0 || strcmp(grade, "A") == 0) {
+        return 4.00;
+    } else if (strcmp(grade, "A-") == 0) {
+        return 3.80;
+    } else if (strcmp(grade, "B+") == 0) {
+        return 3.30;
+    } else if (strcmp(grade, "B") == 0) {
+        return 3.00;
+    } else if (strcmp(grade, "B-") == 0) {
+        return 2.80;
+    } else {
+        return 0.00;
+    }
+}
+
+// Calculate CGPA as the average of all 6 subject GPAs
+float calculate_cgpa(float gpa[], int num_subjects) {
+    float total_gpa = 0;
+    for (int i = 0; i < num_subjects; i++) {
+        total_gpa += gpa[i];
+    }
+    return total_gpa / num_subjects;
+}
+
+int main() {
+    struct student s[6];  // Array to store details of 6 students
+    int j;
+
+    for (j = 0; j < 6; j++) {
+        printf("University of Liberal Arts Bangladesh\n");
+        printf("Enter student name: ");
+        scanf("%s", s[j].name);
+        printf("Enter student id: ");
+        scanf("%d", &s[j].id);
+
+        // Input marks for 6 subjects
+        for (int i = 0; i < 6; i++) {
+            printf("Enter marks for subject %d: ", i + 1);  // Prompt for each subject
+            scanf("%f", &s[j].marks[i]);
+        }
+
+        float gpas[6];  // Array to store the GPAs of each subject for CGPA calculation
+        float total_gpa = 0;
+
+        for (int i = 0; i < 6; i++) {
+            strcpy(s[j].grade[i], calculate_grade(s[j].marks[i]));  // Calculate grade
+            s[j].gpa[i] = calculate_gpa(s[j].grade[i]);             // Calculate GPA based on grade
+            total_gpa += s[j].gpa[i];                               // Accumulate GPA
+            gpas[i] = s[j].gpa[i];                                  // Store GPA for CGPA calculation
+        }
+
+        s[j].cgpa = calculate_cgpa(gpas, 6);  // Calculate CGPA
+    }
+
+    printf("\n");
+
+    // Output the student information
+    for (j = 0; j < 6; j++) {
+        printf("University of Liberal Arts Bangladesh\n");
+        printf("Name: %s\n", s[j].name);
+        printf("ID: %d\n", s[j].id);
+
+        // Display the marks, grades, and GPA for each subject in the desired format
+        for (int i = 0; i < 6; i++) {
+            printf("\nSubject %d Marks: %.2f\n", i + 1, s[j].marks[i]);
+            printf("Grade: %s\n", s[j].grade[i]);
+            printf("GPA: %.2f\n", s[j].gpa[i]);
+        }
+
+        printf("\nOverall CGPA: %.2f\n", s[j].cgpa);
+        printf("\n");
+    }
+
+    return 0;
+}
