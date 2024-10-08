@@ -1,0 +1,297 @@
+// (1)
+
+ class Teacher_template 
+{
+    String name, gender;
+    int phone, age;
+}
+
+public class Teacher_form // The main class which matches the file name
+{
+    public static void main(String[] args)   
+    {
+        Teacher_template teacher1; // Declare the object
+        teacher1 = new Teacher_template(); // Create the object
+        
+        // Assigning values to teacher1's attributes
+        teacher1.name = "Anika Zaman";
+        teacher1.gender = "Female";
+        teacher1.age = 21;
+        teacher1.phone = 1949927155;
+
+        // Print the values
+         System.out.println("Teacher Details :- \n");
+        System.out.println("Name : " + teacher1.name);
+        System.out.println("Gender : " + teacher1.gender);
+        System.out.println("Age : " + teacher1.age);
+        System.out.println("Phone : " + teacher1.phone);
+    }
+}
+
+java -cp /tmp/mQnkjaIHvG/Teacher_form
+
+Teacher Details :- 
+
+Name : Anika Zaman
+Gender : Female
+Age : 21
+Phone : 1949927155
+
+=== Code Execution Successful ===
+
+
+//(2)
+
+
+class Teacher_template 
+{
+    String name, gender;
+    int phone, age;
+    
+    //creating a meathod for avoiding invidual printings
+
+    void display()
+    {
+         System.out.println("Name : " + name);
+        System.out.println("Gender : " + gender);
+        System.out.println("Age : " + age);
+        System.out.println("Phone : " + phone);
+    }
+}
+
+public class Teacher_form // The main class which matches the file name
+{
+    public static void main(String[] args)   
+    {
+          System.out.println("Teacher Details : 1 \n");
+          
+        Teacher_template teacher1; // Declare the object
+        teacher1 = new Teacher_template(); // Create the object
+        
+        // Assigning values to teacher1's attributes
+        teacher1.name = "Anika Zaman";
+        teacher1.gender = "Female";
+        teacher1.age = 21;
+        teacher1.phone = 1949927155;
+
+teacher1.display(); //funtion or meathod call
+       
+         System.out.println("\nTeacher Details : 2 \n");
+       
+        
+          Teacher_template teacher2; // Declare the object
+        teacher2 = new Teacher_template(); // Create the object
+        
+        // Assigning values to teacher2's attributes
+        teacher2.name = "Vamika Zaman";
+        teacher2.gender = "Female";
+        teacher2.age = 27;
+        teacher2.phone = 1949927445;
+        
+ teacher2.display(); //funtion or meathod call
+    }
+}
+
+//(3)
+
+import java.util.Scanner; // Import Scanner class
+
+class Teacher_template 
+{
+    String name, gender;
+    int phone, age;
+    
+    // Method to display teacher details
+    void display()
+    {
+         System.out.print(" ");
+        System.out.println("Name : " + name);
+        System.out.println("Gender : " + gender);
+        System.out.println("Age : " + age);
+        System.out.println("Phone : " + phone);
+         System.out.print(" ");
+    }
+}
+
+public class Teacher_form 
+{
+    public static void main(String[] args)   
+    {
+        Scanner input = new Scanner(System.in); // Create a Scanner object to read input
+        
+        // First teacher
+        System.out.println("Teacher Details: 1 ");
+        Teacher_template teacher1 = new Teacher_template(); // Create teacher1 object
+        
+        // Input for teacher1's attributes
+        System.out.println("Enter name: ");
+        teacher1.name = input.nextLine(); // Reads a String input
+        
+        System.out.println("Enter gender: ");
+        teacher1.gender = input.nextLine(); // Reads a String input
+        
+        System.out.println("Enter age: ");
+        teacher1.age = input.nextInt(); // Reads an int input
+        
+        System.out.println("Enter phone number: ");
+        teacher1.phone = input.nextInt(); // Reads an int input
+        
+        teacher1.display(); // Call the display method
+        
+        // Clear the buffer (skip leftover newline from nextInt)
+       input.nextLine();
+        
+        // Second teacher
+        System.out.println("\nTeacher Details: 2 ");
+        Teacher_template teacher2 = new Teacher_template(); // Create teacher2 object
+        
+        // Input for teacher2's attributes
+        System.out.print("Enter name: ");
+        teacher2.name = input.nextLine(); // Reads a String input
+        
+        System.out.print("Enter gender: ");
+        teacher2.gender = input.nextLine(); // Reads a String input
+        
+        System.out.print("Enter age: ");
+        teacher2.age = input.nextInt(); // Reads an int input
+        
+        System.out.print("Enter phone number: ");
+        teacher2.phone = input.nextInt(); // Reads an int input
+        
+        teacher2.display(); // Call the display method
+        
+        input.close(); // Close the scanner
+    }
+}
+java -cp /tmp/FLZPfsPEix/Teacher_form
+Teacher Details: 1 
+
+Enter name: 
+anita boo
+Enter gender: 
+female
+Enter age:
+ 12
+Enter phone number:
+ 456790
+
+
+Name : anita boo
+Gender : female
+Age : 12
+Phone : 456790
+
+Teacher Details: 2 
+
+Enter name: gurmit roi
+Enter gender: male
+Enter age: 31
+Enter phone number: 2345009
+
+
+Name : gurmit roi
+Gender : male
+Age : 31
+Phone : 2345009
+
+=== Code Execution Successful ===
+
+
+//(4)
+
+import java.util.Scanner; // Import Scanner class
+
+class Teacher_template 
+{
+    String name, gender;
+    int phone, age;
+    
+    //passing parameter
+    void setinfo(String n,String g,int a,int ph)
+    {
+         name = n;
+         gender = g;
+         age = a;
+         phone = ph;
+         
+    }
+    // Method to display teacher details
+    void display()
+    {
+         System.out.println(" ");
+        System.out.println("Name : " + name);
+        System.out.println("Gender : " + gender);
+        System.out.println("Age : " + age);
+        System.out.println("Phone : " + phone);
+         System.out.println(" ");
+    }
+}
+
+public class Teacher_form 
+{
+    public static void main(String[] args)   
+    {
+        Scanner input = new Scanner(System.in); // Create a Scanner object to read input
+        
+        // First teacher
+        System.out.println("Teacher Details: 1 ");
+        Teacher_template teacher1 = new Teacher_template(); // Create teacher1 object
+        
+        // Input for teacher1's attributes
+        
+         /* System.out.println("Enter name: ");
+        insted of teacher1.name = input.nextLine(); .......
+       */
+       
+       //taking user input
+        
+        System.out.println("Enter name ,gender,age,phone :- ");
+        
+        teacher1.setinfo( input.nextLine(), input.nextLine(),input.nextInt(),input.nextInt());
+        
+        teacher1.display(); // Call the display method
+        
+        // Clear the buffer (skip leftover newline from nextInt)
+       input.nextLine();
+        
+        // Second teacher
+        System.out.println("\nTeacher Details: 2 ");
+        Teacher_template teacher2 = new Teacher_template(); // Create teacher2 object
+        
+        // Input for teacher2's attributes
+        
+        //NOT taking any user input
+        
+        //instead of teacher1.name="Anika";
+        
+         teacher2.setinfo("Anika","Female",21,57090834);
+         
+        teacher2.display(); // Call the display method
+        
+        input.close(); // Close the scanner
+    }
+}
+
+java -cp /tmp/3XJg1UF6N7/Teacher_form
+Teacher Details: 1 
+Enter name ,gender,age,phone :- 
+jonh
+male
+26
+458009
+ 
+Name : jonh
+Gender : male
+Age : 26
+Phone : 458009
+ 
+
+Teacher Details: 2 
+ 
+Name : Anika
+Gender : Female
+Age : 21
+Phone : 57090834
+ 
+
+=== Code Execution Successful ===
