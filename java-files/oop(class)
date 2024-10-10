@@ -453,3 +453,64 @@ Phone : 890642578585885
  
 
 === Code Execution Successful ===
+
+//(6)
+
+//defult for null
+
+
+
+class Teacher_template 
+{
+    String name, gender;
+    long phone;
+  int  age;
+  
+  //default constructor null
+  Teacher_template()
+  {
+      System.out.println("NO VALUE");
+  }
+  
+  
+    // Method to display teacher details
+    void display()
+    {
+         System.out.println(" ");
+        System.out.println("Name : " + name);
+        System.out.println("Gender : " + gender);
+        System.out.println("Age : " + age);
+        System.out.println("Phone : " + phone);
+         System.out.println(" ");
+    }
+}
+
+public class Teacher_form 
+{
+    public static void main(String[] args)   
+    {
+        
+      // fifth teacher
+       System.out.println("\nTeacher Details: 5 ");
+       
+       Teacher_template teacher5 = new Teacher_template(); 
+       //default constructor 
+        
+         teacher5.display(); // Call the display method
+         
+        
+    }
+}
+
+java -cp /tmp/XEFkTOOYP8/Teacher_form
+
+Teacher Details: 5 
+NO VALUE
+ 
+Name : null
+Gender : null
+Age : 0
+Phone : 0
+ 
+
+=== Code Execution Successful ===
