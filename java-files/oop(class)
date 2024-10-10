@@ -59,7 +59,7 @@ class Teacher_template
     }
 }
 
-public class Teacher_form // The main class which matches the file name
+public class Teacher_form // The main clasSystem.out.println("\nTeacher Details: 2 ");s which matches the file name
 {
     public static void main(String[] args)   
     {
@@ -292,6 +292,164 @@ Name : Anika
 Gender : Female
 Age : 21
 Phone : 57090834
+ 
+
+=== Code Execution Successful ===
+
+
+//defult and parameterize constructor,method,different types of coding for class in oop
+
+import java.util.Scanner; // Import Scanner class
+
+class Teacher_template 
+{
+    String name, gender;
+    long phone;
+  int  age;
+  
+  //default constructor
+  Teacher_template()
+  {
+      name= "Tina";
+      gender= "Female" ;
+      age = 34;
+      phone = 890642578585885L ;
+  }
+    
+    // constructor passing parameter
+    Teacher_template(String n,String g,int a,long ph)
+    {
+         name = n;
+         gender = g;
+         age = a;
+         phone = ph;
+         
+    }
+    // Method to display teacher details
+    void display()
+    {
+         System.out.println(" ");
+        System.out.println("Name : " + name);
+        System.out.println("Gender : " + gender);
+        System.out.println("Age : " + age);
+        System.out.println("Phone : " + phone);
+         System.out.println(" ");
+    }
+}
+
+public class Teacher_form 
+{
+    public static void main(String[] args)   
+    {
+        Scanner input = new Scanner(System.in); // Create a Scanner object to read input
+        
+        // First teacher
+        System.out.println("Teacher Details: 1 ");
+        
+           System.out.println("Enter name ,gender,age,phone :- ");
+           
+           //constructor auto call
+           
+        Teacher_template teacher1 = new Teacher_template(input.nextLine(), input.nextLine(),input.nextInt(),input.nextLong()); // Create teacher1 object
+        
+        teacher1.display(); // Call the display method
+        
+        // Clear the buffer (skip leftover newline from nextInt)
+       input.nextLine();
+        
+        // Second teacher
+        System.out.println("\nTeacher Details: 2 ");
+        
+        
+        Teacher_template teacher2 = new Teacher_template("Anika","Female",21,570908340897L); // Create teacher2 object
+        
+        // Input for teacher2's attributes
+         
+        teacher2.display(); // Call the display method
+        
+          // Clear the buffer (skip leftover newline from nextInt)
+       //input.nextLine();only for when you take user input
+       
+       // Third teacher
+       System.out.println("\nTeacher Details: 3 ");
+       
+       Teacher_template teacher3 = new Teacher_template();
+       
+         
+        // Input for teacher3's attributes
+        
+        System.out.print("Enter name: ");//beside
+        teacher3.name = input.nextLine(); // Reads a String input
+        
+        System.out.println("Enter gender: "); //ln for nextline
+        teacher3.gender = input.nextLine(); // Reads a String input
+        
+        System.out.print("Enter age: ");
+        teacher3.age = input.nextInt(); // Reads an int input
+        
+        System.out.println("Enter phone number: ");
+        teacher3.phone = input.nextLong(); // Reads an int input
+        
+        teacher3.display(); // Call the display method
+        
+         // Clear the buffer (skip leftover newline from nextInt)
+       input.nextLine();
+       
+        // fourth teacher
+       System.out.println("\nTeacher Details: 4 ");
+       
+       Teacher_template teacher4 = new Teacher_template(); 
+       //default constructor 
+        
+         teacher4.display(); // Call the display method
+         
+        input.close(); // Close the scanner
+    }
+}
+
+java -cp /tmp/gsessEZMyv/Teacher_form
+
+Teacher Details: 1 
+Enter name ,gender,age,phone :- 
+Alisha roy
+Female
+56
+6890034653675
+ 
+Name : Alisha roy
+Gender : Female
+Age : 56
+Phone : 6890034653675
+ 
+
+Teacher Details: 2 
+ 
+Name : Anika
+Gender : Female
+Age : 21
+Phone : 570908340897
+ 
+
+Teacher Details: 3 
+Enter name: Ruma din
+Enter gender: 
+female
+Enter age: 23
+Enter phone number: 
+4567
+ 
+Name : Ruma din
+Gender : female
+Age : 23
+Phone : 4567
+ 
+
+Teacher Details: 4 
+ 
+Name : Tina
+Gender : Female
+Age : 34
+Phone : 890642578585885
  
 
 === Code Execution Successful ===
