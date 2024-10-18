@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "string basic": "c"
+        "string basic": "c",
+        "data structure ": "cpp"
     }
 }
