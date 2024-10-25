@@ -1,0 +1,65 @@
+//max,min
+#include<stdio.h>
+int main()
+{
+    int n;//n=6
+    printf("Enter value:");
+    scanf("%d",&n);
+    int arr[n],i;
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("\narr[%d]-%d",i,arr[i]);
+    }
+    int max=arr[0],index1=0;//flag index
+    for(i=0;i<n;i++)
+    {
+        if(max<arr[i])
+       {
+           max=arr[i];
+           index1=i;//invidual that max or min index find out than you have to use the flag
+       }
+    }
+    printf("\n\nMaximum :%d at index %d\n",max,index1);
+     int min=arr[0],index2=0;
+    for(i=0;i<n;i++)
+    {
+       if(min>arr[i])
+       {
+        min=arr[i];
+        index2=i;
+       }
+    }
+    printf("\nMinimum :%d at index %d\n",min,index2);
+    //swap
+    //sorting(acending)
+    int store;
+    store=arr[0];
+    arr[0]=arr[index2];
+    arr[index2]=store;
+     for(i=0;i<n;i++)
+     {
+        printf("\narr[%d]-%d",i,arr[i]) ;
+     }
+     int j;
+     for(i=0;i<n-1;i++)//n=5,i=0 //avoid the 1st min and its index all of them 
+     {
+         for(j=i+1;j<n;j++)//i=1
+         {
+            if( arr[i]>arr[j])
+             {
+                store=arr[i] ;
+                arr[i]=arr[j];
+                arr[j]=store;
+             }
+         }
+     }
+     for(i=0;i<n;i++)
+     {
+        printf("\narr[%d]-%d",i,arr[i]) ;
+     }
+    return 0;
+}
