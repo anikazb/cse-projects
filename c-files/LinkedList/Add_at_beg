@@ -1,0 +1,77 @@
+
+
+#include<stdio.h>
+#include<stdlib.h>
+struct node 
+{
+    int data;
+    struct node *link;
+};
+void traverse_nodes(struct node *head)
+{
+    if(head==NULL)
+    {
+        printf("Empty Nodes");
+    }
+    struct node *ptr=NULL;
+    ptr=malloc(sizeof(struct node));
+    ptr=head;
+    while(ptr!=NULL)
+    {
+        ptr=ptr->link;
+    }
+    
+}
+//insert
+void add_at_end(struct node *ptr,int data)
+{
+    struct node *temp=malloc(sizeof(struct node));
+    temp->data=data;
+    temp->link=NULL;
+    ptr->link=temp;
+    printf("%d\n",temp->data);
+}
+void add_at_beg(struct node *ptr,int data)
+{
+    struct node *beg=malloc(sizeof(struct node));
+    beg->data=data;
+    beg->link=NULL;
+    ptr->link=beg;
+    printf("\nAdded at the beggining:%d\n",beg->data);
+}
+int main()
+{
+    
+    
+    struct node *head=NULL;
+    head=malloc(sizeof(struct node));
+    
+     add_at_beg(head,3);
+     add_at_beg(head,53);
+     
+    head->data=34;
+    head->link=NULL;
+    printf("%d\n",head->data);
+
+
+ add_at_end(head,90);
+  add_at_end(head,100);
+  add_at_end(head,24);
+  add_at_end(head,9);
+  traverse_nodes(head);
+  return 0;
+
+}
+/tmp/kR2nkHGhgL.o
+
+Added at the beggining:3
+
+Added at the beggining:53
+34
+90
+100
+24
+9
+
+
+=== Code Execution Successful ===

@@ -1,7 +1,6 @@
 
-//insert node at the end
-//i ve some nodes thn i insert another nodes
-//find out the nulls
+
+
 #include<stdio.h>
 #include<stdlib.h>
 struct node 
@@ -10,7 +9,7 @@ struct node
     struct node *link;
 };
 void traverse_nodes(struct node *head)
-{
+{int count=0;
     if(head==NULL)
     {
         printf("Empty Nodes");
@@ -20,10 +19,10 @@ void traverse_nodes(struct node *head)
     ptr=head;
     while(ptr!=NULL)
     {
-    
+    count++;
         ptr=ptr->link;
     }
-  
+  printf("\nCOUNT=%d",count);
 }
 
 //insert at the end
@@ -65,17 +64,19 @@ current->link=NULL;
 head->link->link=current;
  printf("\n%d",current->data);
 
- traverse_nodes(head);
+ 
  add_at_end(head,90);
+ traverse_nodes(head);
+ return 0;
 }
-/tmp/4zXMWy21bb.o
+
+
+
+/tmp/CRm8uPbQ1p.o
 34
 87
 15
 90
+COUNT=4
 
 === Code Execution Successful ===
-
-
-//insert node at the end
-//i don't've some nodes thn i insert another nodes

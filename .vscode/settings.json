@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "string basic": "c",
-        "data structure ": "cpp"
+        "data structure ": "cpp",
+        "traverse_countnode": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
