@@ -31,12 +31,12 @@ void add_at_end(struct node *ptr,int data)
     ptr->link=temp;
     printf("%d\n",temp->data);
 }
-void add_at_beg(struct node *ptr,int data)
+void add_at_beg(struct node *head,int data)
 {
     struct node *beg=malloc(sizeof(struct node));
     beg->data=data;
-    beg->link=NULL;
-    ptr->link=beg;
+    beg->link=head;
+   
     printf("\nAdded at the beggining:%d\n",beg->data);
 }
 int main()
@@ -62,16 +62,3 @@ int main()
   return 0;
 
 }
-/tmp/kR2nkHGhgL.o
-
-Added at the beggining:3
-
-Added at the beggining:53
-34
-90
-100
-24
-9
-
-
-=== Code Execution Successful ===

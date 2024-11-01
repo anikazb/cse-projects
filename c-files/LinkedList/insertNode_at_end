@@ -1,135 +1,75 @@
-//insert node at the end
-//find out the nulls
+
+
+//linked list
 #include<stdio.h>
 #include<stdlib.h>
-struct node 
+
+//node deffination
+struct node
 {
     int data;
     struct node *link;
 };
-void traverse_nodes(struct node *head)
-{
-    if(head==NULL)
-    {
-        printf("Empty Nodes");
-    }
-    struct node *ptr=NULL;
-    ptr=malloc(sizeof(struct node));
-    ptr=head;
-    while(ptr!=NULL)
-    {
-        ptr=ptr->link;
-    }
-    
-}
 
-//insert at the end
-void add_at_end(struct node *head,int data)
-{
-    struct node *ptr,*temp;
-    ptr=head;
-    temp=malloc(sizeof(struct node));
-    temp->data=data;
-    temp->link=NULL;
-    while(ptr->link!=NULL)
-    {
-        ptr=ptr->link;
-    }
-    ptr->link=temp;
-printf("\n%d",temp->data);
-}
 //create node
-int main()
+struct node *create_Node(int data)
 {
-    //1st node
-    struct node *head=NULL;
-    head=malloc(sizeof(struct node));
-    head->data=34;
-    head->link=NULL;
-    printf("%d",head->data);
-
-//2nd node
-struct node *current=malloc(sizeof(struct node));
-current->data=87;
-current->link=NULL;
-head->link=current;
- printf("%d",current->data);
-
- //3rd node
- current=malloc(sizeof(struct node));
-current->data=15;
-current->link=NULL;
-head->link->link=current;
- printf("%d",current->data);
-
- traverse_nodes(head);
- add_at_end(head,90);
+    struct node *new_node=malloc(sizeof(struct node));
+new_node->data=data;
+new_node->link=NULL;
+return new_node;
 }
-/tmp/4zXMWy21bb.o
-34
-87
-15
-90
 
-=== Code Execution Successful ===
-
-//its easy 
-//insert node at the end
-
-#include<stdio.h>
-#include<stdlib.h>
-struct node 
+//insert at end
+void add_at_end(struct node **head,int data)
 {
-    int data;
-    struct node *link;
-};
-void traverse_nodes(struct node *head)
-{
-    if(head==NULL)
+    struct node *new_node=create_Node(data);
+    //if its the first one
+    if(*head==NULL)//if list is null thn it becomes head
     {
-        printf("Empty Nodes");
+        *head=new_node;
     }
-    struct node *ptr=NULL;
-    ptr=malloc(sizeof(struct node));
-    ptr=head;
-    while(ptr!=NULL)
+    //if its not the first one
+   else
+   {
+       struct node *temp=*head;
+    while(temp->link!=NULL)
     {
-        ptr=ptr->link;
+
+        temp=temp->link;
+    }
+    temp->link=new_node;
+}
+
+}
+
+//traverse and count and display print
+void traverse_display(struct node *head)
+{ int count=0;
+    struct node *temp=head;
+    while(temp!=NULL)
+    {
+        printf("%d\n",temp->data);
+        temp=temp->link;
+        count++;
     }
     
+    printf("\ncount=%d\n",count);
 }
-//insert
-void add_at_end(struct node *ptr,int data)
-{
-    struct node *temp=malloc(sizeof(struct node));
-    temp->data=data;
-    temp->link=NULL;
-    ptr->link=temp;
-    printf("\n%d",temp->data);
-}
-int main()
-{
-    struct node *head=NULL;
-    head=malloc(sizeof(struct node));
-    head->data=34;
-    head->link=NULL;
-    printf("%d\n",head->data);
+ int main()
+ {
+     struct node *head=NULL;
+     
+     add_at_end(&head,45);
+     
+      add_at_end(&head,55);
+      
+      add_at_end(&head,65);
+      traverse_display(head);
+      
+ }
 
-traverse_nodes(head);
- add_at_end(head,90);
-  add_at_end(head,100);
-  add_at_end(head,24);
-  add_at_end(head,9);
-  
-  return 0;
 
-}
-/tmp/XPum9yQ5gL.o
 
-34
-90
-100
-24
-9
 
-=== Code Execution Successful ===
+
