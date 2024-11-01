@@ -66,9 +66,18 @@ void traverse_display(struct node *head)
       
       add_at_end(&head,65);
       traverse_display(head);
-      
- }
+      return 0;
 
+ }
+/tmp/0a8y8CcO2n.o
+45
+55
+65
+
+count=3
+
+
+=== Code Execution Successful ===
 
 
 
