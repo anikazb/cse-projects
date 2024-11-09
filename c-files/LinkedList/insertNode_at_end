@@ -1,84 +1,80 @@
 
+#include <stdio.h>
+#include <stdlib.h>
 
-//linked list
-#include<stdio.h>
-#include<stdlib.h>
-
-//node deffination
-struct node
-{
+struct Node {
     int data;
-    struct node *link;
+    struct Node* next;
 };
 
-//create node
-struct node *create_Node(int data)
-{
-    struct node *new_node=malloc(sizeof(struct node));
-new_node->data=data;
-new_node->link=NULL;
-return new_node;
-}
+void insertAtEnd(struct Node** head, int data) {
+    // Step 1: Create a new node
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->next = NULL;
 
-//insert at end
-void add_at_end(struct node **head,int data)
-{
-    struct node *new_node=create_Node(data);
-    //if its the first one
-    if(*head==NULL)//if list is null thn it becomes head
-    {
-        *head=new_node;
+    // Step 2: If the list is empty, make new node as head
+    if (*head == NULL) {
+        *head = newNode;
+        return;
     }
-    //if its not the first one
-   else
-   {
-       struct node *temp=*head;
-    while(temp->link!=NULL)
-    {
 
-        temp=temp->link;
+    // Step 3: Otherwise, traverse to the last node
+    struct Node* temp = *head;
+    while (temp->next != NULL) {
+        temp = temp->next;
     }
-    temp->link=new_node;
+
+    // Step 4: Change the next of last node
+    temp->next = newNode;
 }
 
-}
-
-//traverse and count and display print
-void traverse_display(struct node *head)
-{ int count=0;
-    struct node *temp=head;
-    while(temp!=NULL)
-    {
-        printf("%d\n",temp->data);
-        temp=temp->link;
+// Function to print the linked list
+void printList(struct Node* node) 
+{
+    int count=0;
+    while (node != NULL) {
+        printf("%d\n", node->data);
+        node = node->next;
         count++;
     }
-    
-    printf("\ncount=%d\n",count);
+    //count
+    printf("\nTotal nodes in the linked list is:%d",count);
 }
- int main()
- {
-     struct node *head=NULL;
-     
-     add_at_end(&head,45);
-     
-      add_at_end(&head,55);
-      
-      add_at_end(&head,65);
-      traverse_display(head);
-      return 0;
 
- }
-/tmp/0a8y8CcO2n.o
+int main() {
+    struct Node* head = NULL;
+    head=malloc(sizeof(struct Node));
+    head->data=45;
+    head->next=NULL;
+    
+ struct Node* current =malloc(sizeof(struct Node));
+    current->data=50;
+    current->next=NULL;
+    head->next=current;
+    
+    
+    
+    current =malloc(sizeof(struct Node));
+    current->data=80;
+    current->next=NULL;
+    head->next->next=current;
+    
+    insertAtEnd(&head, 5);
+
+
+    
+
+    printList(head);
+
+    return 0;
+}
+/tmp/vhVOuCg6yX.o
 45
-55
-65
+50
+80
+5
 
-count=3
-
+Total nodes in the linked list is:4
 
 === Code Execution Successful ===
-
-
-
-

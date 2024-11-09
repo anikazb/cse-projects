@@ -1,106 +1,79 @@
-//linked list
-#include<stdio.h>
-#include<stdlib.h>
 
-//node deffination
-struct node
-{
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
     int data;
-    struct node *link;
+    struct Node* next;
 };
 
-//create node
-struct node *create_node(int data)
-{
-    struct node *new_node=malloc(sizeof(struct node));
-    new_node->data=data;
-    new_node->link=NULL;
-    return new_node;
-}
-//insert at end
-void add_end(struct node **head,int data)
-{
-    struct node *new_node=create_node(data);
-    if(*head==NULL)
-    {
-        *head=new_node;
-    }
-    else
-    {
-        struct node *temp=*head;
-        while(temp->link!=NULL)
-        {
-            temp=temp->link;
-        }
-        temp->link=new_node;
-    }
-}
 
-//insert at beggining
-void add_at_beg(struct node **head,int data)
-{
-    struct node *new_node=create_node(data);
-    new_node->link=*head;
-    *head=new_node;
-}
-
-//add at pos
-void add_at_pos(struct node **head,int data,int pos)
-{
-    //add at begg
-    struct node *new_node=create_node(data);
-    if(pos==1)
-   { new_node->link=*head;
-    *head=new_node;
-    return ;
-   }
-
-    struct node *temp = *head;
-    for (int i = 1; i < pos - 1; i++) {
-        if (temp == NULL) {
-            printf("Position out of bounds\n");
-            return;
-        }
-        temp = temp->link;
+void insertAfter(struct Node* prevNode, int data) {
+    if (prevNode == NULL) {
+        printf("Previous node cannot be NULL\n");
+        return;
     }
 
-    new_node->link = temp->link;                 // Link new node to the next node
-    temp->link = new_node;                       // Link previous node to the new node
+    // Step 1: Create a new node
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+
+    // Step 2: Set the next of new node to next of previous node
+    newNode->next = prevNode->next;
+
+    // Step 3: Update the next of previous node to the new node
+    prevNode->next = newNode;
 }
 
 
 
-//traverse display count
-void traverse_display(struct node *head)
+// Function to print the linked list
+void printList(struct Node* node) 
 {
     int count=0;
-    struct node *temp=head;
-    while(temp!=NULL)
-    {
-        printf("%d\n",temp->data);
-      temp=temp->link;  
-      count++;
+    while (node != NULL) {
+        printf("%d\n", node->data);
+        node = node->next;
+        count++;
     }
-    printf("count=%d\n ",count);
+    //count
+    printf("\nTotal nodes in the linked list is:%d",count);
 }
-int main()
-{
-    struct node *head=NULL;
-     add_end(&head,34);
-      add_end(&head,4);
-    add_at_beg(&head,3);
-    add_at_pos(&head,00,2);
-    traverse_display(head);
+
+int main() {
+    struct Node* head = NULL;
+    head=malloc(sizeof(struct Node));
+    head->data=45;
+    head->next=NULL;
+    
+ struct Node* current =malloc(sizeof(struct Node));
+    current->data=50;
+    current->next=NULL;
+    head->next=current;
+    
+    
+    
+    current =malloc(sizeof(struct Node));
+    current->data=80;
+    current->next=NULL;
+    head->next->next=current;
+    
+    
+
+    
+insertAfter(head->next, 15);  // Inserts 15 after the second node
+
+    printList(head);
+
     return 0;
 }
+/tmp/S1UnoSG0If.o
+45
+50
+15
+80
 
-
-/tmp/QxkDoCK5rL.o
-3
-0
-34
-4
-count=4
- 
+Total nodes in the linked list is:4
 
 === Code Execution Successful ===
