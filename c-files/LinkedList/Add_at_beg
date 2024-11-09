@@ -1,78 +1,53 @@
-//linked list
-#include<stdio.h>
-#include<stdlib.h>
 
-//node deffination
-struct node
-{
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
     int data;
-    struct node *link;
+    struct Node* next;
 };
 
-//create node
-struct node *create_node(int data)
-{
-    struct node *new_node=malloc(sizeof(struct node));
-    new_node->data=data;
-    new_node->link=NULL;
-    return new_node;
-}
-//insert at end
-void add_end(struct node **head,int data)
-{
-    struct node *new_node=create_node(data);
-    if(*head==NULL)
-    {
-        *head=new_node;
-    }
-    else
-    {
-        struct node *temp=*head;
-        while(temp->link!=NULL)
-        {
-            temp=temp->link;
-        }
-        temp->link=new_node;
-    }
+void insertAtHead(struct Node** head, int data) {
+    // Step 1: Create a new node
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+
+    // Step 2: Set the next of new node to current head
+    newNode->next = *head;
+
+    // Step 3: Update head to point to the new node
+    *head = newNode;
 }
 
-//insert at beggining
-void add_at_beg(struct node **head,int data)
-{
-    struct node *new_node=create_node(data);
-    new_node->link=*head;
-    *head=new_node;
-}
-
-//traverse display count
-void traverse_display(struct node *head)
+// Function to print the linked list
+void printList(struct Node* node) 
 {
     int count=0;
-    struct node *temp=head;
-    while(temp!=NULL)
-    {
-        printf("%d\n",temp->data);
-      temp=temp->link;  
-      count++;
+    while (node != NULL) {
+        printf("%d\n", node->data);
+        node = node->next;
+        count++;
     }
-    printf("count=%d\n ",count);
+    //count
+    printf("\nTotal nodes in the linked list is:%d",count);
 }
-int main()
-{
-    struct node *head=NULL;
-     add_end(&head,34);
-      add_end(&head,4);
-    add_at_beg(&head,3);
-    traverse_display(head);
+
+int main() {
+    struct Node* head = NULL;
+
+    insertAtHead(&head, 10);
+    insertAtHead(&head, 20);
+    insertAtHead(&head, 30);
+
+    printList(head);
+
     return 0;
 }
+/tmp/lFVdP5qX4K.o
+30
+20
+10
 
-
-/tmp/85BiyczN1D.o
-3
-34
-4
-count=3
- 
+Total nodes in the linked list is:3
 
 === Code Execution Successful ===

@@ -1,0 +1,118 @@
+
+
+
+#include<stdio.h>
+
+//binary search means sorting 
+void binarySort(int arr[],int n)
+{
+  //selection sort  
+ for(int i=0;i<n-1;i++) //loop=index related index=pos-1
+     {
+          int min=i; //find out min=suppose
+         for(int j=i+1;j<n;j++) 
+       {
+           if(arr[min]>arr[j])
+        {
+            min=j;
+        }
+      }
+     
+     //swap
+     int temp;
+     temp=arr[min];
+     arr[min]=arr[i];
+     arr[i]=temp;
+     }  
+}
+
+
+
+//Binary Search
+int binarySearch(int arr[],int n,int target)
+{
+    //binary search means sorting 
+  int left=0;//index=0   //staring
+  int right=n-1 ;//index=n-1    //ending
+  
+  //acending
+ while (left<=right)
+ {
+     int  middle=left+(right-left)/2; //n+(n-10)/2
+ 
+ if(arr[middle]==target) //middle=target
+ {
+     printf("Found the target at arr[%d]=%d",middle,target);
+     return middle; //found so stop searching and return the index
+ }
+ else if(arr[middle]<target)
+ {
+     left=middle+1;
+     //spouse found in there thn again divide and search
+     
+ }
+ else
+ {
+     right=middle-1;
+   
+ }
+ 
+}
+printf("Not found");
+return -1;
+}
+int main()
+{
+    int n;
+    printf("Enter the size of array :");
+    scanf("%d",&n);
+    
+    int arr[n],i;
+    printf("Elements are:\n");
+    for( i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);//user input (not sorted)
+    }
+    //sorted function call
+    binarySort( arr, n) ;
+    //print the sorting array
+        printf("Sorted Elements are:\n");
+    for(i=0;i<n;i++)
+    {
+        printf("arr[%d]=%d\n",i,arr[i]);
+    }
+    
+    int target;
+    printf("Enter your target :");
+    scanf("%d",&target);
+    
+    
+    //function call
+   binarySearch(arr, n,target)  ;
+ 
+   return 0;
+}
+/tmp/xW0CAGGUiX.o
+Enter the size of array :7
+Elements are:
+2
+3
+4
+7
+1
+9
+2
+Sorted Elements are:
+arr[0]=1
+arr[1]=2
+arr[2]=2
+arr[3]=3
+arr[4]=4
+arr[5]=7
+arr[6]=9
+Enter your target :7
+Found the target at arr[5]=7
+
+=== Code Execution Successful ===
+
+
