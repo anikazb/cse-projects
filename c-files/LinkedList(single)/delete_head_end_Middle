@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+// Function to delete a node by value
+void deleteNode(struct Node** head, int value) {
+    struct Node* temp = *head;
+    struct Node* prev = NULL;
+
+    // Case 1: Node to delete is the head
+    if (temp != NULL && temp->data == value) {
+        *head = temp->next;  // Update head
+        free(temp);          // Free old head
+        return;
+    }
+
+    // Case 2: Node to delete is in the middle or end
+    while (temp != NULL && temp->data != value) {
+        prev = temp;
+        temp = temp->next;
+    }
+
+    // If the value is not present in the list
+    if (temp == NULL) {
+        printf("Value %d not found in the list.\n", value);
+        return;
+    }
+
+    // Unlink the node and free memory
+    prev->next = temp->next;
+    free(temp);
+}
+
+// Function to print the linked list
+void printList(struct Node* node) {
+    while (node != NULL) {
+        printf("%d -> ", node->data);
+        node = node->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    struct Node* head = (struct Node*)malloc(sizeof(struct Node));
+    head->data = 10;
+    head->next = (struct Node*)malloc(sizeof(struct Node));
+    head->next->data = 20;
+    head->next->next = (struct Node*)malloc(sizeof(struct Node));
+    head->next->next->data = 30;
+    head->next->next->next = NULL;
+
+    printf("Original List:\n");
+    printList(head);
+
+    // Delete a node with value 20
+    deleteNode(&head, 20);
+    printf("List after deleting 20:\n");
+    printList(head);
+
+    // Delete the head node
+    deleteNode(&head, 10);
+    printf("List after deleting head (10):\n");
+    printList(head);
+
+    // Attempt to delete a node that doesn't exist
+    deleteNode(&head, 40);
+
+    return 0;
+}
+Original List:
+10 -> 20 -> 30 -> NULL
+
+List after deleting 20:
+10 -> 30 -> NULL
+
+List after deleting head (10):
+30 -> NULL
+
+Value 40 not found in the list.
