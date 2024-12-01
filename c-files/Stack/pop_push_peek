@@ -1,0 +1,68 @@
+#include<stdio.h>
+#define capacity 3
+int stack[capacity];
+int top=-1;//empty stack
+
+void push(int x) //insert
+{
+    if(top<capacity-1) //-1<3-1=2
+  {
+      top=top+1;
+  stack[top]=x;
+  printf("stack added=%d\n",x);
+  }
+  else //overflow
+  {
+      printf("No space in stack");
+  }
+}
+
+int pop() //delete the targeted stack
+{
+    if(top>=0) //stack is not empty
+    {
+      int val=stack[top]  ;//keep the deleted element in val
+      top=top-1;
+      return val;
+    }
+    return -1;//empty top=-1
+}
+
+int peek() //shorashori delete hoy na 
+{
+    if(top>=0)
+    {
+      return stack[top]  ;
+    }
+    return -1;
+}
+ int main()
+{
+    printf("empty stack\n",peek());
+    push(30);
+    push(50);
+    push(20);
+   printf("\ndelete/pop the item(top)=%d\n",pop());
+        push(10);
+     printf("\npeek the item(top)=%d\n",peek()) ;
+    return 0;
+}
+
+empty stack
+stack added=30
+stack added=50
+stack added=20
+
+delete/pop the item(top)=20
+stack added=10
+
+peek the item(top)=10
+
+
+=== Code Execution Successful ===
+
+
+
+
+
+
