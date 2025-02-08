@@ -78,7 +78,7 @@ int readfromFile(int arr[],int maxsize,const char *filename) //maxsize=the max s
         return 0;
     }
     int size=0;
-    while(size<maxsize &&  fscanf(file,"%d",&arr[size]))
+    while(size<maxsize &&  fscanf(file,"%d",&arr[size])==1)
     {
         size++;
     }
@@ -98,7 +98,7 @@ void printarr(int arr[],int size)
 int main()
 {
     int arr[1000]; //maxsize=1000
-int size=readfromFile(arr,1000,"input.text") //file name=input.text
+int size=readfromFile(arr,1000,"input.txt") ;//file name=input.text
 if(size==0) //there is no element in array
 {
     printf("Empty");
