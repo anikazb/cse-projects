@@ -1,0 +1,23 @@
+public class Bank_Account//class declaration
+{
+    //instance variable 
+    private String name;
+    private double balance;
+
+    //construction 
+    public Bank_Account(String name,double balance)
+    {
+        this.name=name;
+        this.balance=balance;
+    }
+}
+//getter method for breaking encapsulation to real account holder
+public String getName() //getname is incorrect cant use attributes real name
+{
+    return name;
+}
+public double getBalance()
+{
+    return balance;
+}
+
